@@ -1,6 +1,6 @@
 package com.easter.mapper;
 
-import com.easter.domain.Orders;
+import com.easter.po.Orders;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

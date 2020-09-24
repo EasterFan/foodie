@@ -11,4 +11,14 @@
 
     <artifactId>foodie-pojo</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.easter</groupId>
+            <artifactId>foodie-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
 </project>

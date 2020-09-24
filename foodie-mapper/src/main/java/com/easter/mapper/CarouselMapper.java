@@ -1,6 +1,6 @@
 package com.easter.mapper;
 
-import com.easter.domain.Carousel;
+import com.easter.po.Carousel;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

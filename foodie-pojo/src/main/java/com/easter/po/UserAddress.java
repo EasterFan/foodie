@@ -1,6 +1,7 @@
 package com.easter.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("用户地址表 ")
 public class UserAddress implements Serializable {
     @ApiModelProperty("地址主键id")
+     @TableId
     private String id;
 
     @ApiModelProperty("关联用户id")

@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("商品规格 每一件商品都有不同的规格，不同的规格又有不同的价格和优惠力度，规格表为此设计")
 public class ItemsSpec implements Serializable {
     @ApiModelProperty("商品规格id")
+     @TableId
     private String id;
 
     @ApiModelProperty("商品外键id")

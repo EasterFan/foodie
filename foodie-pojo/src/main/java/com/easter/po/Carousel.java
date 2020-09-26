@@ -1,16 +1,19 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * carousel
+ *
  * @author
  */
 @Data
@@ -20,6 +23,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("轮播图 ")
 public class Carousel implements Serializable {
     @ApiModelProperty("主键")
+    @TableId
     private String id;
 
     @ApiModelProperty("图片 图片地址")

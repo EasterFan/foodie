@@ -1,16 +1,20 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  * users
+ *
  * @author
  */
 @Data
@@ -20,6 +24,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("用户表 ")
 public class Users implements Serializable {
     @ApiModelProperty("主键id 用户id")
+    @TableId
     private String id;
 
     @ApiModelProperty("用户名 用户名")
@@ -47,7 +52,7 @@ public class Users implements Serializable {
     private Integer sex;
 
     @ApiModelProperty("生日 生日")
-    private Date birthday;
+    private LocalDate birthday;
 
     @ApiModelProperty("创建时间 创建时间")
     private Date createdTime;

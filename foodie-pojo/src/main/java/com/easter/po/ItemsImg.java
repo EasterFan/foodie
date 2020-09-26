@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -20,6 +21,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("商品图片 ")
 public class ItemsImg implements Serializable {
     @ApiModelProperty("图片主键")
+     @TableId
     private String id;
 
     @ApiModelProperty("商品外键id 商品外键id")

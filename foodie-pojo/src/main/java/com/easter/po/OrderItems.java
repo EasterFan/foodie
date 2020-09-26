@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -19,6 +20,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("订单商品关联表 ")
 public class OrderItems implements Serializable {
     @ApiModelProperty("主键id")
+     @TableId
     private String id;
 
     @ApiModelProperty("归属订单id")

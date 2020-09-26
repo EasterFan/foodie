@@ -1,16 +1,19 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * items_comments
+ *
  * @author
  */
 @Data
@@ -20,6 +23,7 @@ import lombok.NoArgsConstructor;
 @ApiModel("商品评价表 ")
 public class ItemsComments implements Serializable {
     @ApiModelProperty("id主键")
+    @TableId
     private String id;
 
     @ApiModelProperty("用户id 用户名须脱敏")

@@ -3,6 +3,7 @@ package com.easter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Author EasterFan working on 2020/9/19 9:54 下午
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.easter.mapper")
+@ComponentScan(basePackages = {"com.easter","org.n3r.idworker"})
 public class FoodieApplication {
     public static void main(String[] args) {
         SpringApplication.run(FoodieApplication.class, args);

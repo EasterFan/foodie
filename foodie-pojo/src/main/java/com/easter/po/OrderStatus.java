@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
         "50：交易关闭（待付款时，用户取消 或 长时间未付款，系统识别后自动关闭） 退货/退货，此分支流程不做，所以不加入")
 public class OrderStatus implements Serializable {
     @ApiModelProperty("订单ID 对应订单表的主键id")
+    @TableId
     private String orderId;
 
     @ApiModelProperty("订单状态")

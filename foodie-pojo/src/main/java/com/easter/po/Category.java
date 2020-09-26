@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -19,7 +20,8 @@ import lombok.NoArgsConstructor;
 @ApiModel("商品分类 ")
 public class Category implements Serializable {
     @ApiModelProperty("主键 分类id主键")
-    private Integer id;
+    @TableId
+    private String id;
 
     @ApiModelProperty("分类名称 分类名称")
     private String name;

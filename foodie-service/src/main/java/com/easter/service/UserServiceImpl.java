@@ -28,6 +28,8 @@ import java.util.Map;
 public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements UserService {
     @Resource
     UsersMapper usersMapper;
+
+    // TODO - replace with mybatis-plus auto generate
     @Autowired
     private Sid sid;
 
@@ -50,6 +52,10 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
             encryptPassword = MD5Utils.getMD5Str(registerVO.getPassword());
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        if (isUserNameExist(registerVO.getUsername())){
+            throw new RuntimeException("user already exist!");
         }
 
         Users user = Users.builder()

@@ -2,6 +2,7 @@ package com.easter.controller;
 
 import com.easter.po.Users;
 import com.easter.service.UserService;
+import com.easter.vo.LoginVO;
 import com.easter.vo.RegisterVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +35,12 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<Users> register(@RequestBody @Valid RegisterVO registerVO) {
         return ResponseEntity.ok().body(userService.register(registerVO));
+    }
+
+    @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
+    @PostMapping("/login")
+    public ResponseEntity<Users> login(@RequestBody @Valid LoginVO loginVO) throws Exception {
+        return ResponseEntity.ok().body(userService.login(loginVO));
     }
 
 }

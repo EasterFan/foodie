@@ -6,6 +6,7 @@ import com.easter.enums.Gender;
 import com.easter.mapper.UsersMapper;
 import com.easter.po.Users;
 import com.easter.utils.MD5Utils;
+import com.easter.vo.LoginVO;
 import com.easter.vo.RegisterVO;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
             e.printStackTrace();
         }
 
-        if (isUserNameExist(registerVO.getUsername())){
+        if (isUserNameExist(registerVO.getUsername())) {
             throw new RuntimeException("user already exist!");
         }
 
@@ -71,5 +72,15 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
         usersMapper.insert(user);
 
         return user;
+    }
+
+    @Override
+    public Users login(LoginVO loginVO) throws Exception {
+        Map<String, Object> map = new HashMap<String, Object>(2) {{
+            put("username", loginVO.getUsername());
+            put("password", MD5Utils.getMD5Str(loginVO.getPassword()));
+        }};
+        List<Users> usersList = usersMapper.selectByMap(map);
+        return usersList.get(0);
     }
 }

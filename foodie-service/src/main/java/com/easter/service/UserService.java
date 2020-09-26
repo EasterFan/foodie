@@ -2,6 +2,7 @@ package com.easter.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.easter.po.Users;
+import com.easter.vo.LoginVO;
 import com.easter.vo.RegisterVO;
 
 /**
@@ -13,4 +14,7 @@ public interface UserService extends IService<Users> {
     boolean isUserNameExist(String username);
 
     Users register(RegisterVO registerVO);
+
+    Users login(LoginVO loginVO) throws Exception;
+
 }

@@ -3,6 +3,7 @@ package com.easter.service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.easter.constant.DefaultContants;
 import com.easter.enums.Gender;
+import com.easter.exception.UserAlreadyExistException;
 import com.easter.mapper.UsersMapper;
 import com.easter.po.Users;
 import com.easter.utils.MD5Utils;
@@ -46,17 +47,9 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
-    public Users register(RegisterVO registerVO) {
-        // TODO global exception
-        String encryptPassword = null;
-        try {
-            encryptPassword = MD5Utils.getMD5Str(registerVO.getPassword());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public Users register(RegisterVO registerVO) throws Exception {
         if (isUserNameExist(registerVO.getUsername())) {
-            throw new RuntimeException("user already exist!");
+            throw new UserAlreadyExistException("register failed: user already exist!");
         }
 
         Users user = Users.builder()
@@ -64,7 +57,7 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
                 .nickname(registerVO.getUsername())
                 .face((DefaultContants.DEFAULT_FACE))
                 .birthday(LocalDate.parse(DefaultContants.DEFAULT_BIRTHDAY))
-                .password(encryptPassword)
+                .password(MD5Utils.getMD5Str(registerVO.getPassword()))
                 .sex(Gender.SECRET.type)
                 .id(sid.nextShort())
                 .build();

@@ -33,7 +33,7 @@ public class UserController {
 
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
     @PostMapping("/register")
-    public ResponseEntity<Users> register(@RequestBody @Valid RegisterVO registerVO) {
+    public ResponseEntity<Users> register(@RequestBody @Valid RegisterVO registerVO) throws Exception {
         return ResponseEntity.ok().body(userService.register(registerVO));
     }
 

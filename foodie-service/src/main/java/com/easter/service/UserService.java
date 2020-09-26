@@ -13,7 +13,7 @@ import com.easter.vo.RegisterVO;
 public interface UserService extends IService<Users> {
     boolean isUserNameExist(String username);
 
-    Users register(RegisterVO registerVO);
+    Users register(RegisterVO registerVO) throws Exception;
 
     Users login(LoginVO loginVO) throws Exception;
 

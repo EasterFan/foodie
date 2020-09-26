@@ -1,19 +1,9 @@
 package com.easter.mapper;
 
-import com.easter.domain.ItemsSpec;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.easter.po.ItemsSpec;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface ItemsSpecMapper {
-    int deleteByPrimaryKey(String id);
-
-    int insert(ItemsSpec record);
-
-    int insertSelective(ItemsSpec record);
-
-    ItemsSpec selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(ItemsSpec record);
-
-    int updateByPrimaryKey(ItemsSpec record);
+public interface ItemsSpecMapper extends BaseMapper<ItemsSpec> {
 }

@@ -11,5 +11,14 @@
 
     <artifactId>foodie-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.easter</groupId>
+            <artifactId>foodie-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

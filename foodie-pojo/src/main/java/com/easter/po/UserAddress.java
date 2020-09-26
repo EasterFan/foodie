@@ -1,5 +1,6 @@
 package com.easter.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,6 +30,7 @@ public class UserAddress implements Serializable {
     private String receiver;
 
     @ApiModelProperty("收件人手机号")
+    @TableField(exist = false)
     private String mobile;
 
     @ApiModelProperty("省份")

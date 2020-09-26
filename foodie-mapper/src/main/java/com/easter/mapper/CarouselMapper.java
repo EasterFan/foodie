@@ -1,19 +1,10 @@
 package com.easter.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.easter.po.Carousel;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface CarouselMapper {
-    int deleteByPrimaryKey(String id);
+public interface CarouselMapper extends BaseMapper<Carousel> {
 
-    int insert(Carousel record);
-
-    int insertSelective(Carousel record);
-
-    Carousel selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(Carousel record);
-
-    int updateByPrimaryKey(Carousel record);
 }

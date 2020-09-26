@@ -1,19 +1,10 @@
 package com.easter.mapper;
 
-import com.easter.domain.OrderStatus;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.easter.po.OrderStatus;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface OrderStatusMapper {
-    int deleteByPrimaryKey(String orderId);
+public interface OrderStatusMapper extends BaseMapper<OrderStatus> {
 
-    int insert(OrderStatus record);
-
-    int insertSelective(OrderStatus record);
-
-    OrderStatus selectByPrimaryKey(String orderId);
-
-    int updateByPrimaryKeySelective(OrderStatus record);
-
-    int updateByPrimaryKey(OrderStatus record);
 }

@@ -1,19 +1,10 @@
 package com.easter.mapper;
 
-import com.easter.domain.UserAddress;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.easter.po.UserAddress;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface UserAddressMapper {
-    int deleteByPrimaryKey(String id);
+public interface UserAddressMapper extends BaseMapper<UserAddress> {
 
-    int insert(UserAddress record);
-
-    int insertSelective(UserAddress record);
-
-    UserAddress selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(UserAddress record);
-
-    int updateByPrimaryKey(UserAddress record);
 }

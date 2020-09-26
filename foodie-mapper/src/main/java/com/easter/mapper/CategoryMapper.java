@@ -1,19 +1,10 @@
 package com.easter.mapper;
 
-import com.easter.domain.Category;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.easter.po.Category;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface CategoryMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface CategoryMapper extends BaseMapper<CategoryMapper> {
 
-    int insert(Category record);
-
-    int insertSelective(Category record);
-
-    Category selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Category record);
-
-    int updateByPrimaryKey(Category record);
 }

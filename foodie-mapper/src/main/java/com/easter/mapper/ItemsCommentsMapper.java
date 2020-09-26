@@ -1,19 +1,9 @@
 package com.easter.mapper;
 
-import com.easter.domain.ItemsComments;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.easter.po.ItemsComments;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface ItemsCommentsMapper {
-    int deleteByPrimaryKey(String id);
-
-    int insert(ItemsComments record);
-
-    int insertSelective(ItemsComments record);
-
-    ItemsComments selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(ItemsComments record);
-
-    int updateByPrimaryKey(ItemsComments record);
+public interface ItemsCommentsMapper extends BaseMapper<ItemsComments> {
 }

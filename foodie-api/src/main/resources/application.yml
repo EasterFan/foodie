@@ -37,8 +37,9 @@ spring:
 
 ############################################################
 #
-# mybatis 配置
+# mybatis-plus 配置
 #
 ############################################################
-mybatis:
-  type-aliases-package: com.easter.pojo          # 所有POJO类所在包路径
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 控制台打印 SQL

@@ -9,6 +9,7 @@ import com.easter.po.Users;
 import com.easter.utils.MD5Utils;
 import com.easter.vo.LoginVO;
 import com.easter.vo.RegisterVO;
+import lombok.extern.slf4j.Slf4j;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

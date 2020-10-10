@@ -1,4 +1,4 @@
-package com.easter.enums;
+package com.easter.exception;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -17,7 +17,16 @@ public enum ErrorCode {
      */
     USER_ALREADY_EXIST(1001, HttpStatus.BAD_REQUEST, "当前用户已经存在"),
     FULL_NAME_ALREADY_EXIST(1002, HttpStatus.BAD_REQUEST, "当前用户已经存在"),
-    PASSWORD_MISMATCH_CURRENT_USER(1011, HttpStatus.BAD_REQUEST, "旧密码输入错误");
+    PASSWORD_MISMATCH_CURRENT_USER(1011, HttpStatus.BAD_REQUEST, "旧密码输入错误"),
+
+    VALIDATE_FAILED(404, HttpStatus.BAD_REQUEST,"参数检验失败"),
+    UNAUTHORIZED(401, HttpStatus.UNAUTHORIZED,"暂未登录或token已经过期"),
+    SUCCESS(200, HttpStatus.OK,"成功"),
+    FAILED(500,HttpStatus.INTERNAL_SERVER_ERROR, "服务器内部错误"),
+
+
+    // 用户模块相关
+    FORBIDDEN(403, HttpStatus.FORBIDDEN,"没有相关权限");
 
     private final int code;
 

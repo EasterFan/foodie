@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 
+import static com.easter.exception.ErrorCode.USER_ALREADY_EXIST;
+
 /**
  * @Author EasterFan working on 2020/9/19 10:04 下午
  * @Description
@@ -28,7 +30,8 @@ public class UserController {
     @ApiOperation(value = "查询用户名是否存在", notes = "查询用户名是否存在", httpMethod = "GET")
     @GetMapping("/isUserNameExist")
     public CommonResult<Boolean> isUsernameExist(@RequestParam @Valid @NotEmpty String username) {
-        return CommonResult.success(userService.isUserNameExist(username));
+        boolean isUserExist = userService.isUserNameExist(username);
+        return isUserExist ? CommonResult.failed(USER_ALREADY_EXIST, true) : CommonResult.success(false);
     }
 
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")

@@ -1,6 +1,5 @@
 package com.easter.exception;
 
-import com.easter.enums.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import lombok.var;

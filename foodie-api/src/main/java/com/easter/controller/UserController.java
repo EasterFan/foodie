@@ -1,5 +1,6 @@
 package com.easter.controller;
 
+import com.easter.api.CommonResult;
 import com.easter.po.Users;
 import com.easter.service.UserService;
 import com.easter.vo.LoginVO;
@@ -7,7 +8,6 @@ import com.easter.vo.RegisterVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -27,20 +27,20 @@ public class UserController {
 
     @ApiOperation(value = "查询用户名是否存在", notes = "查询用户名是否存在", httpMethod = "GET")
     @GetMapping("/isUserNameExist")
-    public ResponseEntity<Boolean> isUsernameExist(@RequestParam @Valid @NotEmpty String username) {
-        return ResponseEntity.ok().body(userService.isUserNameExist(username));
+    public CommonResult<Boolean> isUsernameExist(@RequestParam @Valid @NotEmpty String username) {
+        return CommonResult.success(userService.isUserNameExist(username));
     }
 
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
     @PostMapping("/register")
-    public ResponseEntity<Users> register(@RequestBody @Valid RegisterVO registerVO) throws Exception {
-        return ResponseEntity.ok().body(userService.register(registerVO));
+    public CommonResult<Users> register(@RequestBody @Valid RegisterVO registerVO) throws Exception {
+        return CommonResult.success(userService.register(registerVO));
     }
 
     @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
     @PostMapping("/login")
-    public ResponseEntity<Users> login(@RequestBody @Valid LoginVO loginVO) throws Exception {
-        return ResponseEntity.ok().body(userService.login(loginVO));
+    public CommonResult<Users> login(@RequestBody @Valid LoginVO loginVO) throws Exception {
+        return CommonResult.success(userService.login(loginVO));
     }
 
 }

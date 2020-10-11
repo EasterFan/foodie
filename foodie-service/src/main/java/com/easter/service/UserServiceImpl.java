@@ -9,8 +9,6 @@ import com.easter.po.Users;
 import com.easter.utils.MD5Utils;
 import com.easter.vo.LoginVO;
 import com.easter.vo.RegisterVO;
-import org.n3r.idworker.Sid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,10 +28,6 @@ import java.util.Map;
 public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements UserService {
     @Resource
     UsersMapper usersMapper;
-
-    // TODO - replace with mybatis-plus auto generate
-    @Autowired
-    private Sid sid;
 
     @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
     @Override
@@ -59,7 +53,6 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper, Users> implements 
                 .birthday(LocalDate.parse(DefaultContants.DEFAULT_BIRTHDAY))
                 .password(MD5Utils.getMD5Str(registerVO.getPassword()))
                 .sex(Gender.SECRET.type)
-                .id(sid.nextShort())
                 .build();
 
         usersMapper.insert(user);

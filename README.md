@@ -12,7 +12,7 @@
 | SpringBoot     | 脚手架             |  v2.1.5      |      |      |
 | JDK     | 运行环境             |  v1.8      |      |      |
 | Mybatis-plus   | Orm 框架           |        |      |      |
-| MySql          | 数据               | v8.0.21 |      |      |
+| MySql          | 数据库               | v8.0.21 |      |      |
 | flyway         | 数据库迁移工具     | CE v5.2.4       |      |      |
 | Maven          | 项目构建管理工具   |  v3.6.3_1 |      |      |
 | Hikari         | 数据库连接池       |        |      |      |
@@ -22,3 +22,17 @@
 | Lombok         | POJO类简化工具     |  v1.18.12 |      |      |
 | nginx         |      |   |      |      |
 
+启动项目：
+```bash
+# 下载 docker 镜像
+docker pull mysql:8.0.21
+
+# 启动数据库
+docker run -d --name=no-earn-money-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=foodie-shop mysql:8.0.21
+
+```
+
+
+## 相关地址
+功能模块图：https://www.processon.com/view/link/5fbbad93e401fd2d6ed405af  
+swagger: http://localhost:8088/doc.html

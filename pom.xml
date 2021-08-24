@@ -16,6 +16,7 @@
         <module>foodie-service</module>
     </modules>
 
+    <!--引入这个包，说明这是一个 springboot 项目-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -33,7 +34,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <!--禁用默认日志系统-->
+            <!--禁用默认日志系统，后续会引用新的日志-->
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -45,6 +46,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- 此依赖用于解析 yml 配置文件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -88,6 +91,7 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+
         <!-- swagger2 配置 -->
         <dependency>
             <groupId>io.springfox</groupId>

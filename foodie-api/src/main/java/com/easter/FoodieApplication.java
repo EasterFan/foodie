@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.easter.mapper")
-//@ComponentScan(basePackages = {"com.easter","org.n3r.idworker"})
 public class FoodieApplication {
     public static void main(String[] args) {
         SpringApplication.run(FoodieApplication.class, args);

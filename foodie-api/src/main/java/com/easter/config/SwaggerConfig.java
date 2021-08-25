@@ -1,16 +1,17 @@
 package com.easter.config;
 
 import com.easter.constant.ConfigurationConstants;
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Author EasterFan working on 2020/9/26 10:23 下午
@@ -18,11 +19,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @Version 1.0
  */
 @Configuration
-@EnableSwagger2
+@EnableOpenApi
+@EnableKnife4j
 public class SwaggerConfig {
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.easter.controller"))

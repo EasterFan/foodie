@@ -21,7 +21,6 @@ public class CarouselController {
     @Autowired
     CarouselService carouselService;
 
-
     @ApiOperation(value = "获取所有轮播图地址", notes = "获取所有轮播图地址", httpMethod = "GET")
     @GetMapping()
     public CommonResult allCarousel() {
